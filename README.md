@@ -1,6 +1,6 @@
 # 🛡️ Health Insurance Premium Predictor
 
-A production-grade machine learning web application that predicts annual health insurance premiums based on patient demographics, health profile, and financial information — built for **Shield Insurance** as part of an end-to-end ML project.
+A production-grade machine learning web application that predicts annual health insurance premiums based on patient demographics, health profile, and financial information — built for **Health Insurance Premium Prediction** as part of an end-to-end ML project.
 
 ---
 
@@ -54,14 +54,28 @@ Healthcare-Premium-Prediction/
 │   └── prediction_helper.py     # Preprocessing & prediction logic
 │
 ├── notebooks/
-│   └── insurance_premium.ipynb  # EDA, model training & evaluation
+│   └── Dataset_segmentation.ipynb  # EDA, Data Segmentation
+│   └── Healthcare-Premium-Prediction.ipynb  # EDA, model training & evaluation
+│   └── Healthcare-Premium-Prediction-Old_Age.ipynb  # EDA, model training & evaluation for older age
+│   └── Healthcare-Premium-Prediction-Young_Age.ipynb  # EDA, model training & evaluation for younger age
+│   └── Healthcare-Premium-Prediction-Young_Age-with_gr.ipynb  # EDA, model training & evaluation for younger age with genetic factor
 │
-├── model/
-│   ├── model.pkl                # Trained XGBoost model
-│   └── scaler.pkl               # Feature scaler
+├── app/artifacts/
+│   ├── model__rest.joblib       # Trained XGBoost model-for age>25
+│   ├── model_young.joblib       # Trained XGBoost modelfor age<2=5
+│   ├── scaler_rest.joblib       # Feature scaler for age>25
+│   └── scaler_young.joblib      # Feature scaler for age<=25
 │
-├── data/
-│   └── insurance_data.csv       # Training dataset (50,000 records)
+│
+├── documents/
+│   ├── sow.pdf       # scope of work file
+│
+│
+├── dataset/
+│   └── premimum_old_age.xlsx       # Training dataset splitedwith age>25
+│   └── premimum_young_age.xlsx     # Training dataset splitedwith age<=25
+│   └── premimum.xlsx       # Training dataset (50,000 records)
+│   └── premimum_young_with_gr.xlsx       # Training dataset with genetic factor for young age
 │
 ├── requirements.txt             # Python dependencies
 └── README.md
